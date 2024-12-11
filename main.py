@@ -4,6 +4,7 @@ from geopy import distance
 from pprint import pprint
 
 
+
 apikey = '60c9f71a-6312-4c7e-91e6-670e028c5937'
 
 
@@ -55,11 +56,11 @@ for coffee in coffee_list:
         'title': coffee_name,
         'distance': distance_to_cafe,
         'latitude': coffee_latitude,
-        'longitude': coffee_longitude,
+        'longitude': coffee_longitude
     })
 
 
-pprint(cafes_info)
+pprint(cafes_info, sort_dicts=False)
 
 
 
