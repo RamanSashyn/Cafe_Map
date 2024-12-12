@@ -3,8 +3,13 @@ import requests
 import folium
 from dotenv import load_dotenv
 from geopy import distance
-from pprint import pprint
 import os
+
+
+def load_coffee_data(file_path):
+    with open("coffee.json", "r", encoding="CP1251") as coffee_file:
+        file_content = coffee_file.read()
+        return json.loads(file_content)
 
 
 def fetch_coordinates(apikey, address):
@@ -30,33 +35,14 @@ def fetch_coordinates(apikey, address):
     return lon, lat
 
 
-def calculate_distance(lat1, lon1, lat2, lon2):
-    coords_1 = (lat1, lon1)
-    coords_2 = (lat2, lon2)
-    return distance.distance(coords_1, coords_2).km
+def calculate_distance(user_lat, user_lon, cafe_lat, cafe_lon):
+    user_coords = (user_lat, user_lon)
+    cafe_coords = (cafe_lat, cafe_lon)
+    return distance.distance(user_coords, cafe_coords).km
 
 
-def get_cafe_distance(cafe):
-    return cafe["distance"]
-
-
-def main():
-    load_dotenv()
-    apikey = os.getenv("API_KEY")
-
-    location = input("Где вы находитесь? ")
-    coords = fetch_coordinates(apikey, location)
-    if not coords:
-        print("Проверьте адрес!")
-        return
-    print(f"Ваши координаты: {coords}")
-
-    with open("coffee.json", "r", encoding="CP1251") as coffee_file:
-        file_content = coffee_file.read()
-        coffee_list = json.loads(file_content)
-
+def create_cafe_info(coffee_list, coords):
     cafes_info = []
-
     for coffee in coffee_list:
         coffee_name = coffee["Name"]
         coffee_longitude = coffee["geoData"]["coordinates"][0]
@@ -65,6 +51,7 @@ def main():
         distance_to_cafe = calculate_distance(
             coords[1], coords[0], coffee_latitude, coffee_longitude
         )
+
         cafes_info.append(
             {
                 "title": coffee_name,
@@ -73,10 +60,14 @@ def main():
                 "longitude": coffee_longitude,
             }
         )
+    return cafes_info
 
-    nearby_cafes = sorted(cafes_info, key=get_cafe_distance)[:5]
-    pprint(nearby_cafes, sort_dicts=False)
 
+def get_cafe_distance(cafe):
+    return cafe["distance"]
+
+
+def create_map(coords, nearby_cafes):
     map = folium.Map(location=[coords[1], coords[0]], zoom_start=11)
 
     folium.Marker(
@@ -91,6 +82,26 @@ def main():
             popup=f"{cafe['title']} ({cafe['distance']:.2f} км)",
             icon=folium.Icon(color="green"),
         ).add_to(map)
+
+    return map
+
+
+def main():
+    load_dotenv()
+    apikey = os.getenv("APIKEY")
+
+    location = input("Где вы находитесь? ")
+    coords = fetch_coordinates(apikey, location)
+    if not coords:
+        return
+
+    coffee_list = load_coffee_data("coffee.json")
+
+    cafes_info = create_cafe_info(coffee_list, coords)
+
+    nearby_cafes = sorted(cafes_info, key=get_cafe_distance)[:5]
+
+    map = create_map(coords, nearby_cafes)
 
     map.save("index.html")
 
