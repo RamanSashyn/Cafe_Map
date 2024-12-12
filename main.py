@@ -43,6 +43,7 @@ with open("coffee.json", "r", encoding='CP1251') as coffee_file:
 
 cafes_info = []
 
+
 for coffee in coffee_list:
     coffee_name = coffee["Name"]
     coffee_longitude = coffee["geoData"]["coordinates"][0]
@@ -65,7 +66,8 @@ def get_cafe_distance(cafe):
 
 
 
-pprint(min(cafes_info, key=get_cafe_distance), sort_dicts=False)
+nearby_cafes = sorted(cafes_info, key=get_cafe_distance)[:5]
+pprint(nearby_cafes, sort_dicts=False)
 
 
 
