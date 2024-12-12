@@ -60,7 +60,13 @@ for coffee in coffee_list:
     })
 
 
-pprint(cafes_info, sort_dicts=False)
+def get_cafe_distance(cafe):
+    return cafe["distance"]
+
+
+
+pprint(min(cafes_info, key=get_cafe_distance), sort_dicts=False)
+
 
 
 
