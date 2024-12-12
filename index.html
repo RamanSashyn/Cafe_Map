@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_ed3063c0b84c466cec8fc308ed489147 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_ed3063c0b84c466cec8fc308ed489147" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_ed3063c0b84c466cec8fc308ed489147 = L.map(
+                "map_ed3063c0b84c466cec8fc308ed489147",
+                {
+                    center: [55.761918, 37.621525],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "maxBounds": null,
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_82331cb65d3328cfadda4ed5f92cf644 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_82331cb65d3328cfadda4ed5f92cf644.addTo(map_ed3063c0b84c466cec8fc308ed489147);
+        
+    
+            var marker_ea4d5f1fa5e21bcdf0235d1472289b22 = L.marker(
+                [55.761918, 37.621525],
+                {
+  "draggable": null,
+  "autoPan": null,
+}
+            ).addTo(map_ed3063c0b84c466cec8fc308ed489147);
+        
+    
+            var icon_e2c0338a1ddc9fb552984c28529870d4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_ea4d5f1fa5e21bcdf0235d1472289b22.setIcon(icon_e2c0338a1ddc9fb552984c28529870d4);
+        
+    
+        var popup_e9966e694a1fbf9c32bfc48e1312ebd7 = L.popup({
+  "maxWidth": "100%",
+  "autoClose": null,
+  "closeOnClick": null,
+});
+
+        
+            
+                var html_a456851e3c89fb500abf3eadea494dfd = $(`<div id="html_a456851e3c89fb500abf3eadea494dfd" style="width: 100.0%; height: 100.0%;">Вы здесь</div>`)[0];
+                popup_e9966e694a1fbf9c32bfc48e1312ebd7.setContent(html_a456851e3c89fb500abf3eadea494dfd);
+            
+        
+
+        marker_ea4d5f1fa5e21bcdf0235d1472289b22.bindPopup(popup_e9966e694a1fbf9c32bfc48e1312ebd7)
+        ;
+
+        
+    
+    
+            var marker_f0b1862d04425c288c0c1b55316bc6c9 = L.marker(
+                [55.76214075919577, 37.621594999999985],
+                {
+  "draggable": null,
+  "autoPan": null,
+}
+            ).addTo(map_ed3063c0b84c466cec8fc308ed489147);
+        
+    
+            var icon_41fb18dd25213d0e66d7586306e4f566 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_f0b1862d04425c288c0c1b55316bc6c9.setIcon(icon_41fb18dd25213d0e66d7586306e4f566);
+        
+    
+        var popup_bc3317a50e9f4e1db5e2d6098d2a1d0a = L.popup({
+  "maxWidth": "100%",
+  "autoClose": null,
+  "closeOnClick": null,
+});
+
+        
+            
+                var html_44a1c87a17b872e8661a9f857c16f3dc = $(`<div id="html_44a1c87a17b872e8661a9f857c16f3dc" style="width: 100.0%; height: 100.0%;">Right coffee (0.03 км)</div>`)[0];
+                popup_bc3317a50e9f4e1db5e2d6098d2a1d0a.setContent(html_44a1c87a17b872e8661a9f857c16f3dc);
+            
+        
+
+        marker_f0b1862d04425c288c0c1b55316bc6c9.bindPopup(popup_bc3317a50e9f4e1db5e2d6098d2a1d0a)
+        ;
+
+        
+    
+    
+            var marker_930e972e3444efc23b182007cb295301 = L.marker(
+                [55.760896758834434, 37.62301300000001],
+                {
+  "draggable": null,
+  "autoPan": null,
+}
+            ).addTo(map_ed3063c0b84c466cec8fc308ed489147);
+        
+    
+            var icon_f08772573d432f21e87fa36bb66749f6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_930e972e3444efc23b182007cb295301.setIcon(icon_f08772573d432f21e87fa36bb66749f6);
+        
+    
+        var popup_4af20cd3c4e909977d403b2d6693cb99 = L.popup({
+  "maxWidth": "100%",
+  "autoClose": null,
+  "closeOnClick": null,
+});
+
+        
+            
+                var html_fe9db8cb77d9bb989282bae8135abc52 = $(`<div id="html_fe9db8cb77d9bb989282bae8135abc52" style="width: 100.0%; height: 100.0%;">Кофе (0.15 км)</div>`)[0];
+                popup_4af20cd3c4e909977d403b2d6693cb99.setContent(html_fe9db8cb77d9bb989282bae8135abc52);
+            
+        
+
+        marker_930e972e3444efc23b182007cb295301.bindPopup(popup_4af20cd3c4e909977d403b2d6693cb99)
+        ;
+
+        
+    
+    
+            var marker_c5e961239020285fd7229652e8a9efb4 = L.marker(
+                [55.76174967561974, 37.618939227308495],
+                {
+  "draggable": null,
+  "autoPan": null,
+}
+            ).addTo(map_ed3063c0b84c466cec8fc308ed489147);
+        
+    
+            var icon_0c5af295df73c54f159110d35ec0be0b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_c5e961239020285fd7229652e8a9efb4.setIcon(icon_0c5af295df73c54f159110d35ec0be0b);
+        
+    
+        var popup_7fb05cf9db9eec1fee69c94779eed0b6 = L.popup({
+  "maxWidth": "100%",
+  "autoClose": null,
+  "closeOnClick": null,
+});
+
+        
+            
+                var html_22790b32052141a5df205cef7c059a71 = $(`<div id="html_22790b32052141a5df205cef7c059a71" style="width: 100.0%; height: 100.0%;">VOQUE-CAFE (0.16 км)</div>`)[0];
+                popup_7fb05cf9db9eec1fee69c94779eed0b6.setContent(html_22790b32052141a5df205cef7c059a71);
+            
+        
+
+        marker_c5e961239020285fd7229652e8a9efb4.bindPopup(popup_7fb05cf9db9eec1fee69c94779eed0b6)
+        ;
+
+        
+    
+    
+            var marker_26a36b14431f80647eb7b17d4c52dc44 = L.marker(
+                [55.760132758612535, 37.62455799999999],
+                {
+  "draggable": null,
+  "autoPan": null,
+}
+            ).addTo(map_ed3063c0b84c466cec8fc308ed489147);
+        
+    
+            var icon_84226606e78a0b9e186be292391c999d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_26a36b14431f80647eb7b17d4c52dc44.setIcon(icon_84226606e78a0b9e186be292391c999d);
+        
+    
+        var popup_cb35d6bb003829efee6e72c3807c6ab7 = L.popup({
+  "maxWidth": "100%",
+  "autoClose": null,
+  "closeOnClick": null,
+});
+
+        
+            
+                var html_7b3e438a095f59b5b45f653e10156640 = $(`<div id="html_7b3e438a095f59b5b45f653e10156640" style="width: 100.0%; height: 100.0%;">CAFFE VERSARI (0.28 км)</div>`)[0];
+                popup_cb35d6bb003829efee6e72c3807c6ab7.setContent(html_7b3e438a095f59b5b45f653e10156640);
+            
+        
+
+        marker_26a36b14431f80647eb7b17d4c52dc44.bindPopup(popup_cb35d6bb003829efee6e72c3807c6ab7)
+        ;
+
+        
+    
+    
+            var marker_70c6a01490ab270a3eda11ab76a6d57b = L.marker(
+                [55.76510346672519, 37.62049043031435],
+                {
+  "draggable": null,
+  "autoPan": null,
+}
+            ).addTo(map_ed3063c0b84c466cec8fc308ed489147);
+        
+    
+            var icon_2d079bfb495624b4db49ba832d4b7b45 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_70c6a01490ab270a3eda11ab76a6d57b.setIcon(icon_2d079bfb495624b4db49ba832d4b7b45);
+        
+    
+        var popup_6beb724f40494d4c0038d671b31cfb37 = L.popup({
+  "maxWidth": "100%",
+  "autoClose": null,
+  "closeOnClick": null,
+});
+
+        
+            
+                var html_cc19195c594932bc6f07f8a01368d707 = $(`<div id="html_cc19195c594932bc6f07f8a01368d707" style="width: 100.0%; height: 100.0%;">КофеПорт (0.36 км)</div>`)[0];
+                popup_6beb724f40494d4c0038d671b31cfb37.setContent(html_cc19195c594932bc6f07f8a01368d707);
+            
+        
+
+        marker_70c6a01490ab270a3eda11ab76a6d57b.bindPopup(popup_6beb724f40494d4c0038d671b31cfb37)
+        ;
+
+        
+    
+</script>
+</html>
